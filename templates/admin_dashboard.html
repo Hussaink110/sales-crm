@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="d-flex justify-content-between mb-3">
+    <h3>All Enquiries</h3>
+    <a href="/admin/add-sales" class="btn btn-success">Add Salesperson</a>
+</div>
+
+<div class="card shadow">
+    <div class="card-body">
+
+        <table class="table table-bordered table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                    <th>Assign</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for e in enquiries %}
+                <tr>
+                    <td>{{ e.name }}</td>
+                    <td>{{ e.phone }}</td>
+                    <td>{{ e.email }}</td>
+                    <td>
+                        <span class="badge bg-secondary">{{ e.status }}</span>
+                    </td>
+                    <td>
+                        <a href="/admin/assign/{{ e.id }}" class="btn btn-sm btn-primary">
+                            Assign
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+
+    </div>
+
+    
+</div>
+
+{% endblock %}

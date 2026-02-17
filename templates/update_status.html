@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Update Status</h2>
+
+<p>{{ enquiry.name }}</p>
+
+<form method="POST">
+    <select name="status">
+        <option>In Progress</option>
+        <option>Completed</option>
+        <option>Lost</option>
+    </select>
+    <button type="submit">Update</button>
+</form>
+
+{% endblock %}
