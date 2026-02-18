@@ -11,9 +11,15 @@
 
                 <form method="POST">
 
-                    <!-- Name -->
+                    <!-- Company Name -->
                     <div class="mb-3">
-                        <label class="form-label">Full Name</label>
+                        <label class="form-label">Company Name</label>
+                        <input type="text" name="company" class="form-control" required>
+                    </div>
+
+                    <!-- Full Name -->
+                    <div class="mb-3">
+                        <label class="form-label">Your Full Name</label>
                         <input type="text" name="name" class="form-control" required>
                     </div>
 
@@ -25,27 +31,14 @@
 
                     <!-- Email -->
                     <div class="mb-3">
-                        <label class="form-label">Email Address</label>
+                        <label class="form-label">Email ID</label>
                         <input type="email" name="email" class="form-control" required>
                     </div>
 
-                    <!-- Service Interested -->
+                    <!-- Requirement -->
                     <div class="mb-3">
-                        <label class="form-label">Service Interested In</label>
-                        <select name="service" class="form-select">
-                            <option value="">Select Service</option>
-                            <option>Website Development</option>
-                            <option>Mobile App Development</option>
-                            <option>Digital Marketing</option>
-                            <option>IT Support</option>
-                            <option>Other</option>
-                        </select>
-                    </div>
-
-                    <!-- Message -->
-                    <div class="mb-3">
-                        <label class="form-label">Message</label>
-                        <textarea name="message" class="form-control" rows="4" placeholder="Describe your requirement..."></textarea>
+                        <label class="form-label">Requirement</label>
+                        <textarea name="message" class="form-control" rows="4" placeholder="Describe your requirement..." required></textarea>
                     </div>
 
                     <!-- Submit -->

@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="card shadow">
+    <div class="card-body">
+        <h3>Enquiry Report</h3>
+
+        <p><strong>Company:</strong> {{ enquiry.company }}</p>
+        <p><strong>Name:</strong> {{ enquiry.name }}</p>
+        <p><strong>Phone:</strong> {{ enquiry.phone }}</p>
+        <p><strong>Email:</strong> {{ enquiry.email }}</p>
+
+        <hr>
+
+        <p><strong>Created At:</strong> {{ enquiry.created_at }}</p>
+        <p><strong>Assigned To:</strong> {{ enquiry.sales_name }}</p>
+        <p><strong>Assigned At:</strong> {{ enquiry.assigned_at }}</p>
+
+        <hr>
+
+        <p><strong>Status:</strong>
+            {% if enquiry.completed %}
+                <span class="badge bg-success">Completed</span>
+            {% else %}
+                <span class="badge bg-warning">Not Completed</span>
+            {% endif %}
+        </p>
+
+        <p><strong>Outcome:</strong></p>
+        <div class="border p-3 bg-light">
+            {{ enquiry.outcome or "No report submitted" }}
+        </div>
+
+        <p class="mt-3"><strong>Report Generated At:</strong> {{ enquiry.report_created_at }}</p>
+
+        <a href="/admin/dashboard" class="btn btn-secondary mt-3">Back</a>
+        <a href="/admin/report/pdf/{{ enquiry.id }}" class="btn btn-danger mt-3">
+    Export PDF
+</a>
+
+    </div>
+</div>
+
+{% endblock %}

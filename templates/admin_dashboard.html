@@ -12,27 +12,52 @@
         <table class="table table-bordered table-hover">
             <thead class="table-dark">
                 <tr>
+                    <th>Created At</th>
+                    <th>Company</th>
                     <th>Name</th>
                     <th>Phone</th>
                     <th>Email</th>
-                    <th>Status</th>
-                    <th>Assign</th>
+                    <th>Assigned To</th>
+                    <th>Change</th>
+                    <th>View</th>
+                    <th>Report</th>
+
                 </tr>
             </thead>
             <tbody>
                 {% for e in enquiries %}
                 <tr>
+                    <td>{{ e.created_at }}</td>
+                    <td>{{ e.company }}</td>
                     <td>{{ e.name }}</td>
                     <td>{{ e.phone }}</td>
                     <td>{{ e.email }}</td>
+
+                
+                    
+                    
                     <td>
-                        <span class="badge bg-secondary">{{ e.status }}</span>
+                        {% if e.sales_name %}
+                            <span class="badge bg-success">{{ e.sales_name }}</span>
+                        {% else %}
+                            <span class="badge bg-secondary">Unassigned</span>
+                        {% endif %}
                     </td>
+
                     <td>
                         <a href="/admin/assign/{{ e.id }}" class="btn btn-sm btn-primary">
-                            Assign
+                            {% if e.sales_name %}Change{% else %}Assign{% endif %}
                         </a>
                     </td>
+
+                    <td>
+                        <a href="/admin/view/{{ e.id }}" class="btn btn-sm btn-info">View</a>
+                        <td>
+                    <a href="/admin/report/{{ e.id }}" class="btn btn-sm btn-dark">View Report</a>
+                        </td>
+
+                        </td>
+
                 </tr>
                 {% endfor %}
             </tbody>

@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="card shadow">
+    <div class="card-body">
+        <h3>Generate Report</h3>
+
+        <p><strong>Company:</strong> {{ enquiry.company }}</p>
+        <p><strong>Name:</strong> {{ enquiry.name }}</p>
+
+        <form method="POST">
+
+            <div class="form-check">
+                <input type="checkbox" name="completed" class="form-check-input">
+                <label class="form-check-label">Mark as Completed</label>
+            </div>
+
+            <div class="mb-3 mt-3">
+                <label>Outcome Details</label>
+                <textarea name="outcome" class="form-control" rows="4" required></textarea>
+            </div>
+
+            <button class="btn btn-success">Submit Report</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

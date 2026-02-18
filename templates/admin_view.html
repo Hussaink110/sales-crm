@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="card shadow">
+    <div class="card-body">
+        <h3 class="mb-3">Enquiry Details</h3>
+
+        <p><strong>Company:</strong> {{ enquiry.company }}</p>
+        <p><strong>Name:</strong> {{ enquiry.name }}</p>
+        <p><strong>Phone:</strong> {{ enquiry.phone }}</p>
+        <p><strong>Email:</strong> {{ enquiry.email }}</p>
+
+        <p><strong>Requirement:</strong></p>
+        <div class="border p-3 bg-light">
+            {{ enquiry.message }}
+        </div>
+
+        <p class="mt-3">
+            <strong>Status:</strong>
+            <span class="badge bg-secondary">{{ enquiry.status }}</span>
+        </p>
+
+        <a href="/admin/dashboard" class="btn btn-secondary mt-3">Back</a>
+    </div>
+</div>
+
+{% endblock %}
